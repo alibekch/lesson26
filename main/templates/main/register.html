@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>registration</title>
+</head>
+<h1>this is register page, register.html</h1>
+<body>
+    <form method = "post">
+        {%csrf_token%}
+        <input type="text" name="form_name" placeholder="form_name"> <br>
+        <input type="text" name="form_surname" placeholder="form_surname"> <br>
+        <input type="email" name="form_email" placeholder="form_email"> <br>
+        <input type="text" name="form_username" placeholder="form_username"> <br>
+        <input type="text" name="form_pass" placeholder="form_pass"> <br>
+        <input type="date" name="form_year" placeholder="form_year">
+        <input type ="submit" value="send">
+    </form>
+    
+    
+    
+        {%if error%}
+        <p>{{error}}</p>
+        {%else%}
+        <p>пусто</p>
+        {%endif%}
+</body>
+</html>

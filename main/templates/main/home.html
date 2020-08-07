@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>main page</title>
+
+</head>
+<body>
+    <h1>this is homepage</h1>
+    <h3>you are currently logged in as: {{request.user}}</h3>
+
+    {%if request.user.is_authenticated%}
+    <a href="log_out">Log me out</a>
+    {%else%}
+
+    <a href  = "{%url 'login_page'%}">Login link</a> <br><br><br>
+    <a href = "{%url 'register_page'%}">Register link</a>
+    {%endif%}
+
+
+    <h1>products</h1>
+    <hr>
+    {%for i in products%}
+    <p>{{i.name}}</p>
+    <a href ="{%url 'make_order' id_product=i.pk %}">Купить этот продукт</a>
+    <br>
+    {%endfor%}
+
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login page</title>
+</head>
+<body>
+   <h3>login page</h3>
+   <h3>you are currently logged in as: </h3> <h2>{{request.user}}</h2>
+
+    <form method = "post">
+        {%csrf_token%}
+        <input type="text" name="form_username" placeholder="form_username"> <br>
+        <br>
+        <input type="text" name="form_pass" placeholder="form_pass"> <br>
+        <br>
+        <input type ="submit" value="send"><br>
+    </form>
+    {%if error%}
+    {{error}}
+    {%endif%}
+</body>
+</html>
